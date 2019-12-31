@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test WebRTC</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <video id="myVideo"></video>
+
+        <div class="controlbox">
+            <button id="connectButton" name="connectButton" class="buttonleft">
+              Connect
+            </button>
+            <button id="disconnectButton" name="disconnectButton" class="buttonright" disabled>
+              Disconnect
+            </button>
+          </div>
+          
+          <div class="messagebox">
+            <label for="message">Enter a message:
+              <input type="text" name="message" id="message" placeholder="Message text" 
+                      inputmode="latin" size=60 maxlength=120 disabled>
+            </label>
+            <button id="sendButton" name="sendButton" class="buttonright" disabled>
+              Send
+            </button>
+          </div>
+          <div class="messagebox" id="receivebox">
+            <p>Messages received:</p>
+          </div>
+    </body>
+    <script type="text/javascript" src="code2.js"></script>
+</html>
