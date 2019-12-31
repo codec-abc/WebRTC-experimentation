@@ -62,8 +62,8 @@ function connectPeers() {
     };
 
     localConnection.oniceconnectionstatechange = function (e) {
+        console.log("new ice connection state: " + localConnection.iceConnectionState);
         console.log(e);
-        console.log("oniceconnectionstatechange " + JSON.stringify(e));
     };
 
     localConnection.onicegatheringstatechange = function() {
@@ -79,7 +79,7 @@ function connectPeers() {
             break;
         }
 
-        console.log(label);
+        console.log("iceGatheringState " + label);
     }
 
     // Now create an offer to connect; this starts the process
@@ -101,7 +101,10 @@ function connectPeers() {
 
 function setAnswer(e) {
     localConnection.setRemoteDescription(e)
+    .then(() => console.log("connection state " + localConnection.iceConnectionState))
     .catch(handleSetAnwserError);
+
+    console.log("connection state " + localConnection.iceConnectionState);
 }
 
 function addIceCandidate(e) {

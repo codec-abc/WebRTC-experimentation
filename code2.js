@@ -64,8 +64,8 @@ function connectPeers() {
     };
 
     localConnection.oniceconnectionstatechange = function (e) {
-        //console.log(e);
-        //console.log("oniceconnectionstatechange " + JSON.stringify(e));
+        console.log("new ice connection state: " + localConnection.iceConnectionState);
+        console.log(e);
     };
 
     localConnection.onicegatheringstatechange = function() {
@@ -81,7 +81,7 @@ function connectPeers() {
             break;
         }
 
-        console.log(label);
+        console.log("iceGatheringState " + label);
     }
 
     console.log("now ready for offer then ice candidate");
@@ -120,6 +120,7 @@ function setOffer(e) {
         }
     )
     .catch(handleCreateDescriptionError);
+
 }
 
 // Handle errors attempting to create a description;
