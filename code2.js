@@ -89,7 +89,7 @@ function connectPeers() {
 
 function addIceCandidate(e) {
     
-    if (!localConnection || !localConnection.localDescription) {
+    if (!localConnection) {
         console.log("add offer before");
         return;
     }
