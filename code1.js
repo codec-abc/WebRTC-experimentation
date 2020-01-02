@@ -34,7 +34,7 @@ function connectPeers() {
 
     localConnection = new RTCPeerConnection({
         iceServers: [{
-            url: 'stun:stun.l.google.com:19302'
+            urls: 'stun:stun.l.google.com:19302'
         }]
     });
 
@@ -92,7 +92,7 @@ function connectPeers() {
 
             console.log(
                 "setOffer(JSON.parse(atob(\"" +
-                btoa(JSON.stringify(localConnection.localDescription))
+                btoa(JSON.stringify(offer))
                 + "\")));");
         }
     )
